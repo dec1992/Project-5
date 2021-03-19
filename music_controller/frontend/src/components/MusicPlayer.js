@@ -12,7 +12,7 @@ export default class MusicPlayer extends Component {
     skipSong() {
         const requestOptions = {
             method: "POST",
-            headers: { "Content-Type": "application/json" }
+            headers: { "Content-Type": "application/json" },
         }
         fetch('/spotify/skip', requestOptions)
     }
@@ -55,7 +55,7 @@ export default class MusicPlayer extends Component {
                             {this.props.is_playing ? <PauseIcon /> : <PlayArrowIcon />}
                         </IconButton>
                         <IconButton onClick={() => this.skipSong()}>
-                            <SkipNextIcon />
+                            <SkipNextIcon /> {this.props.votes} /{" "} {this.props.votes_required}
                         </IconButton>
                     </div>
                 </Grid>
